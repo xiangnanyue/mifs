@@ -3,7 +3,7 @@ Example showing the use of the mifs module.
 """
 
 import mifs
-from sklearn.datasets import  make_classification, make_regression
+from sklearn.datasets import make_classification, make_regression
 import numpy as np 
 
 def check_selection(selected, i, r):
@@ -16,13 +16,13 @@ def check_selection(selected, i, r):
         all_f = set(range(i+r))
         TP = len(selected.intersection(all_f))
         FP = len(selected - all_f)
-        FN =  len(all_f - selected)
+        FN = len(all_f - selected)
         if (TP+FN) > 0: 
             sens = TP/float(TP + FN)
         else:
             sens = np.nan
         if (TP+FP) > 0:
-            prec =  TP/float(TP + FP)   
+            prec = TP/float(TP + FP)
         else:
             prec = np.nan
     except:
